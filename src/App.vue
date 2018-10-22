@@ -11,7 +11,7 @@
       </div>
     </div>
 
-    <div v-else class="chat">
+    <div v-else class="chat col-xl-10">
         <ul class="chat_list">
           <li class="chat_list_item" v-for="item in chat" :key="item.message"><strong>{{item.username}}: </strong>{{item.message}}</li>
         </ul>
@@ -22,10 +22,9 @@
 </template>
 
 <script>
-
-
 import io from 'socket.io-client'
 const socket = io.connect('http://localhost:3010')
+
 export default {
   data () {
     return {
