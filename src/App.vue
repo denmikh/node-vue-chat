@@ -11,9 +11,9 @@
       </div>
     </div>
 
-    <div v-else class="chat col-xl-10">
+    <div v-else class="chat col-xl-10" ref="body">
         <ul class="chat_list">
-          <li class="chat_list_item" v-for="item in chat" :key="item.message"><strong>{{item.username}}: </strong>{{item.message}}</li>
+          <li class="chat_list_item" v-for="(item, i) in chat" :key="i"><strong>{{item.username}}: </strong>{{item.message}}</li>
         </ul>
         <input class="chat_input form-control" type="text" v-model="message" @keypress.enter="sendMessage" placeholder="Type a message">
     </div>
