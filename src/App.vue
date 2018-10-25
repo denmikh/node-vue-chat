@@ -11,7 +11,7 @@
       </div>
     </div>
 
-    <div v-else class="chat col-xl-10" ref="body">
+    <div v-else class="chat col-xl-10" ref="chat">
         <ul class="chat_list">
           <li class="chat_list_item" v-for="(item, i) in chat" :key="i"><strong>{{item.username}}: </strong>{{item.message}}</li>
         </ul>
@@ -61,7 +61,7 @@ export default {
       this.message = ''
     },
     setScrollToEnd () {
-      this.$refs.body.scrollTop = this.$refs.body.scrollHeight
+      this.$refs.chat.scrollTop = this.$refs.chat.scrollHeight
     }
   }
 }
